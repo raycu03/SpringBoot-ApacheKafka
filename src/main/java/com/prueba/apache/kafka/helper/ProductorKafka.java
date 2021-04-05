@@ -14,10 +14,9 @@ public class ProductorKafka {
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 
-    private final String kafkaTopic = "createOracleUserTopicTest100";
+    private final String kafkaTopic = "forumTopic";
 
     public void send(String message) {
-
         kafkaTemplate.send(kafkaTopic, message);
     }
 

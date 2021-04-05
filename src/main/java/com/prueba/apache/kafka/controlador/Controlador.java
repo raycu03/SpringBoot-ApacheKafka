@@ -22,11 +22,10 @@ public class Controlador {
   private ProductorKafka productorKafka;
 
   @GetMapping("/mensaje")
-  public String enviarMensaje(@RequestBody UserCreateListenerDTO mensaje)
+  public String enviarMensaje()
       throws JsonProcessingException {
     String respuesta = "Proceso exitoso";
-    String json = mapper.writerWithDefaultPrettyPrinter()
-        .writeValueAsString(mensaje);
+    String json = "sale";
 
     try {
       productorKafka.send(json);
